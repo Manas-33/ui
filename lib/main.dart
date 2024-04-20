@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:piltovr_assignment/constants.dart';
 
@@ -11,8 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     var width = MediaQuery.of(context).size.width;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SingleChildScrollView(
             child: Container(
@@ -441,12 +444,10 @@ Tue, 23 Apr, 5:00 PM - 8:00 PM
                 overflow: TextOverflow.clip,
                 style: googleTextStyle(15, FontWeight.w500, textColorGrey),
               ),
-              
               const SizedBox(
                 height: 8,
               ),
               Divider(
-
                 color: white.withOpacity(0.4),
                 thickness: 0.3,
               ),
@@ -454,7 +455,6 @@ Tue, 23 Apr, 5:00 PM - 8:00 PM
                 height: 8,
               ),
               SizedBox(
-
                 width: width,
                 child: Text('''
 Join us for the invite-only Founder Meetup in Bangalore on 23rd April 23rd from 5 PM to 8 PM. 
